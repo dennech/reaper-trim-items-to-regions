@@ -2,9 +2,13 @@
   @description Trim selected items to project regions (keep inside regions)
   @version 1.0.0
   @author OpenAI Codex
+  @link https://github.com/dennech/reaper-trim-items-to-regions
+  @changelog First public release.
   @about
     Keeps only the parts of the selected media items that fall inside any
-    project region. Plain markers are ignored.
+    project region. Plain markers are ignored. Uses stock REAPER API only,
+    without time selection, edit cursor, glue, render, or third-party
+    extensions.
 ]]
 
 local ACTION_NAME = "Trim selected items to project regions (keep inside regions)"

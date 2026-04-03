@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a reproducible problem with the script
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail to reproduce it.
+  - type: input
+    id: reaper_version
+    attributes:
+      label: REAPER version
+      placeholder: e.g. 7.67
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. macOS 15.4 / Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Create item from ...
+        2. Create regions at ...
+        3. Run the script ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: extra_context
+    attributes:
+      label: Extra context
+      description: Add screenshots, a minimal example, or anything else that may help.

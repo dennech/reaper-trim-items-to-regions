@@ -1,0 +1,44 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install Lua 5.4
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.4
+
+      - name: Check Lua syntax
+        run: |
+          luac -p "Trim selected items to project regions (keep inside regions).lua"
+          luac -p "Items/Trim selected items to project regions (keep inside regions).lua"
+
+      - name: Install ReaPack indexer
+        run: |
+          gem install reapack-index -v 1.2.6
+
+      - name: Validate ReaPack metadata
+        run: |
+          reapack-index --check .
+
+      - name: Rebuild index and verify it is committed
+        run: |
+          tmp_index="$(mktemp)"
+          reapack-index --rebuild --no-commit --output "$tmp_index" .
+          diff -u index.xml "$tmp_index"
