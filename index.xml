@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Dennech REAPER Scripts" commit="daa0a9d1a90a82572c5652054795fc30e672d85f">
+  <category name="Items">
+    <reapack name="Trim selected items to project regions (keep inside regions).lua" type="script" desc="Trim selected items to project regions (keep inside regions)">
+      <metadata>
+        <link rel="website">https://github.com/dennech/reaper-trim-items-to-regions</link>
+      </metadata>
+      <version name="1.0.0" author="OpenAI Codex" time="2026-04-03T08:06:39Z">
+        <changelog><![CDATA[First public release.]]></changelog>
+        <source main="main" file="Trim selected items to project regions (keep inside regions).lua">https://github.com/dennech/reaper-trim-items-to-regions/raw/daa0a9d1a90a82572c5652054795fc30e672d85f/Trim%20selected%20items%20to%20project%20regions%20(keep%20inside%20regions).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <link rel="website">https://github.com/dennech/reaper-trim-items-to-regions</link>
+  </metadata>
+</index>

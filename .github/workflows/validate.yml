@@ -40,5 +40,6 @@ jobs:
       - name: Rebuild index and verify it is committed
         run: |
           tmp_index="$(mktemp)"
+          cp index.xml "$tmp_index"
           reapack-index --rebuild --no-commit --output "$tmp_index" .
           diff -u index.xml "$tmp_index"
